@@ -8,10 +8,14 @@ app.use(express.json());
 // router
 const categoryRouter = require("./routers/category");
 const userAuth = require("./routers/userAuthentication");
+const videoRouter = require("./routers/videos");
+const productRouter = require("./routers/products");
 
 // routes
 app.use("/category", categoryRouter);
 app.use("/", userAuth);
+app.use("/videos", videoRouter);
+app.use("/products", productRouter);
 
 // GET '/'
 app.get("/", (req, res) => {
