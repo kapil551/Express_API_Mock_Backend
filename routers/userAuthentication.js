@@ -28,4 +28,28 @@ router.route("/login").post((req, res) => {
     res.status(401).json({ success: false, message: "User is not registered, please sign up"});
 })
 
+// @POST '/signup'
+router.route("/signup").post((req, res) => {
+
+    const { username, password, email } = req.body;
+
+    const userExists = userCredentials.some(({ username: name, email: emailAddress }) => {
+        if(username === name) {
+            res.status(409).json({ success: false, message: "Username is already taken" });
+            return true;
+        }
+
+        if(email === emailAddress) {
+            res.status(409).json({ success: false, message: "Email address is already taken" });
+            return true;
+        }
+    });
+
+    // console.log(userExists);
+    if(userExists === false) {
+        userCredentials.push({ username, password, email });
+        res.status(201).json({ success: true, message: "User added successfully"});
+    }
+})
+
 module.exports = router;
