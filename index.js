@@ -17,6 +17,8 @@ const categoryRouter = require("./routers/category");
 const userRouter = require("./routers/user");
 const videoRouter = require("./routers/videos");
 const productRouter = require("./routers/products");
+const cartRouter = require("./routers/cart");
+const wishlistRouter = require("./routers/wishlist");
 
 // middlewares
 const errorHandler = require("./middlewares/errorHandler");
@@ -27,6 +29,8 @@ app.use("/category", categoryRouter);
 app.use("/users", userRouter);
 app.use("/videos", videoRouter);
 app.use("/products", productRouter);
+app.use("/cart", cartRouter);
+app.use("/wishlist", wishlistRouter);
 
 // middleware
 app.use(routeHandler);
