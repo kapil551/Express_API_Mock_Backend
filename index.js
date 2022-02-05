@@ -14,7 +14,7 @@ connectDB();
 
 // router
 const categoryRouter = require("./routers/category");
-const userAuth = require("./routers/userAuthentication");
+const userRouter = require("./routers/user");
 const videoRouter = require("./routers/videos");
 const productRouter = require("./routers/products");
 
@@ -24,7 +24,7 @@ const routeHandler = require("./middlewares/routeHandler");
 
 // routes
 app.use("/category", categoryRouter);
-app.use("/", userAuth);
+app.use("/users", userRouter);
 app.use("/videos", videoRouter);
 app.use("/products", productRouter);
 
