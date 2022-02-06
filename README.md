@@ -1,5 +1,5 @@
 ## Express API Backend
-Backend using ExpressJS connected to MongoDB through Mongoose. Common user credentails are maintained for all the apps to obtain SSO like feature.
+Backend using ExpressJS connected to MongoDB through Mongoose. Common user credentials are maintained for all the apps to obtain SSO-like features.
 
 ## Tools/Technology Stack
 
